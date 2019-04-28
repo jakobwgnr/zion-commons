@@ -1,0 +1,58 @@
+{
+  "name": "zion-commons",
+  "version": "0.0.1",
+  "description": "A library for common functions in the zion framework",
+  "main": "./dist/zion-commons.js",
+  "types": "./dist/zion-commons.d.js",
+  "scripts": {
+    "setup": "npm install",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "pretest": "npm run build",
+    "test": "jest unit --config jestconfig.json",
+    "mocktest": "npm run build && jest mock --config jestconfig.json",
+    "masstest": "npm run build && jest mass --config jestconfig.json",
+    "clean": "shx rm -rf node_modules\\ dist\\ docs\\",
+    "format": "prettier --write \"dev\\**\\*.ts\" \"dev\\**\\*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A dev",
+    "postversion": "git push && git push --tags",
+    "coveralls": "jest unit --config jestconfig.json --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "zion",
+    "commons",
+    "framework"
+  ],
+  "author": "Jakob Wagner",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.1",
+    "coveralls": "^3.0.3",
+    "jest": "^24.7.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4",
+    "shx": "^0.3.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobwgnr/zion-commons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jakobwgnr/zion-commons/issues"
+  },
+  "homepage": "https://github.com/jakobwgnr/zion-commons.git#readme",
+  "dependencies": {
+  }
+}
