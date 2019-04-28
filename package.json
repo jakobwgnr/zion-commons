@@ -54,5 +54,9 @@
   },
   "homepage": "https://github.com/jakobwgnr/zion-commons.git#readme",
   "dependencies": {
+    "@types/app-root-path": "^1.2.4",
+    "app-root-path": "^2.2.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }
